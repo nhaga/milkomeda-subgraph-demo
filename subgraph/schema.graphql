@@ -1,0 +1,11 @@
+type StoredValue @entity {
+  id: ID!
+  oldValue: BigInt!
+  newValue: BigInt!
+  caller: User!
+}
+
+type User @entity {
+  id: ID!
+  values: [StoredValue!]! @derivedFrom(field: "caller")
+}

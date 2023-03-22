@@ -1,0 +1,26 @@
+specVersion: 0.0.5
+description: Milkomeda Subgraph Tutorial
+schema:
+  file: ./subgraph/schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Storage
+    network: ganache
+    source:
+      address: '0x274b028b03A250cA03644E6c578D81f019eE1323'
+      abi: Storage
+      startBlock: 1
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      file: ./subgraph/mapping.ts
+      entities:
+        - Values
+        - User
+      abis:
+        - name: Storage
+          file: ./artifacts/contracts/Storage.sol/Storage.json
+      eventHandlers:
+        - event: 'ChangeNumber(uint256,uint256,uint256,address)'
+          handler: handleChangeNumber
