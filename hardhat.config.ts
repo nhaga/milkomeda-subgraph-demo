@@ -9,6 +9,10 @@ const config: HardhatUserConfig = {
       url: `https://rpc-devnet-algorand-rollup.a1.milkomeda.com`,
       accounts: [`0x${process.env.PRIVATE_KEY}`]
     },
+    c1_testnet: {
+      url: `https://rpc-devnet-cardano-evm.c1.milkomeda.com`,
+      accounts: [`0x${process.env.PRIVATE_KEY}`]
+    },
     ganache: {
       url: 'http://localhost:8545',
       chainId: 1337,

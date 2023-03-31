@@ -14,6 +14,7 @@
   "dependencies": {
     "@graphprotocol/graph-ts": "^0.29.3",
     "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
     "hardhat": "^2.13.0"
   },
   "devDependencies": {
