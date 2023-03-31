@@ -49,5 +49,5 @@ services:
       postgres_pass: let-me-in
       postgres_db: graph-node
       ipfs: 'ipfs:5001'
-      ethereum: 'ganache:http://ganache:8545'
+      ethereum: 'milkomeda:https://rpc-devnet-algorand-rollup.a1.milkomeda.com'
       GRAPH_LOG: info
