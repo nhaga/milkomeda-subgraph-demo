@@ -7,7 +7,7 @@ dataSources:
     name: Storage
     network: milkomeda
     source:
-      address: '0xC1778C995570672A0C0224dE47e9fB9db0f9cEAf'
+      address: '0x9C2703E92720d1bdB60fEC01195706D829AD8db1'
       abi: Storage
       startBlock: 1
     mapping:

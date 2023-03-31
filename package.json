@@ -7,8 +7,8 @@
     "deploy": "npx hardhat run scripts/deploy.ts --network a1_testnet",
     "call": "npx hardhat run scripts/callContract.ts --network a1_testnet",
     "configure_subgraph": "graph codegen --output-dir subgraph/types/",
-    "create_subgraph": "graph create milkomeda/subgraph_tutorial --node http://127.0.0.1:8020",
-    "deploy_subgraph": "graph deploy milkomeda/subgraph_tutorial --ipfs http://localhost:5001  --node http://localhost:8020 --output-dir artifacts/subgraph -l 0.1",
+    "create_subgraph": "graph create milkomeda/subgraph_tutorial_a1 --node http://127.0.0.1:8020",
+    "deploy_subgraph": "graph deploy milkomeda/subgraph_tutorial_a1 --ipfs http://localhost:5001  --node http://localhost:8020 --output-dir artifacts/subgraph -l 0.1",
     "all": "yarn deploy && yarn configure_subgraph && yarn create_subgraph && yarn deploy_subgraph"
   },
   "dependencies": {
