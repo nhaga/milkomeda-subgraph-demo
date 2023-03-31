@@ -1,13 +1,24 @@
-# Sample Hardhat Project
+# Milkomeda Subgraph Demo
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
+Run docker containers
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
+docker compose up
+```
+
+Create a `.env` file with:
+
+```
+PRIVATE_KEY=<PRIVATE_KEY>
+```
+
+Run script to deploy contract and deploy subgraph
+
+```
+yarn all
+```
+
+Send call transaction to be indexed:
+```
+yarn call
 ```
