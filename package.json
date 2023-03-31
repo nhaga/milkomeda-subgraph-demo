@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "deploy": "npx hardhat run scripts/deploy.ts --network ganache",
-    "call": "npx hardhat run scripts/callContract.ts --network ganache",
+    "deploy": "npx hardhat run scripts/deploy.ts --network c1_testmet",
+    "call": "npx hardhat run scripts/callContract.ts --network c1_testnet",
     "configure_subgraph": "graph codegen --output-dir subgraph/types/",
     "create_subgraph": "graph create milkomeda/subgraph_tutorial --node http://127.0.0.1:8020",
     "deploy_subgraph": "graph deploy milkomeda/subgraph_tutorial --ipfs http://localhost:5001  --node http://localhost:8020 --output-dir artifacts/subgraph -l 0.1",
