@@ -9,4 +9,6 @@ data
 # Hardhat files
 cache
 artifacts
-
+build
+.build
+.hypothesis

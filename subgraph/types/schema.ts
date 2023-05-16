@@ -29,13 +29,23 @@ export class StoredValue extends Entity {
     }
   }
 
+  static loadInBlock(id: string): StoredValue | null {
+    return changetype<StoredValue | null>(
+      store.get_in_block("StoredValue", id)
+    );
+  }
+
   static load(id: string): StoredValue | null {
     return changetype<StoredValue | null>(store.get("StoredValue", id));
   }
 
   get id(): string {
     let value = this.get("id");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set id(value: string) {
@@ -44,7 +54,11 @@ export class StoredValue extends Entity {
 
   get oldValue(): BigInt {
     let value = this.get("oldValue");
-    return value!.toBigInt();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBigInt();
+    }
   }
 
   set oldValue(value: BigInt) {
@@ -53,7 +67,11 @@ export class StoredValue extends Entity {
 
   get newValue(): BigInt {
     let value = this.get("newValue");
-    return value!.toBigInt();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBigInt();
+    }
   }
 
   set newValue(value: BigInt) {
@@ -62,7 +80,11 @@ export class StoredValue extends Entity {
 
   get caller(): string {
     let value = this.get("caller");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set caller(value: string) {
@@ -88,13 +110,21 @@ export class User extends Entity {
     }
   }
 
+  static loadInBlock(id: string): User | null {
+    return changetype<User | null>(store.get_in_block("User", id));
+  }
+
   static load(id: string): User | null {
     return changetype<User | null>(store.get("User", id));
   }
 
   get id(): string {
     let value = this.get("id");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set id(value: string) {
@@ -103,10 +133,10 @@ export class User extends Entity {
 
   get values(): Array<string> {
     let value = this.get("values");
-    return value!.toStringArray();
-  }
-
-  set values(value: Array<string>) {
-    this.set("values", Value.fromStringArray(value));
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toStringArray();
+    }
   }
 }

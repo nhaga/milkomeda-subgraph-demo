@@ -7,11 +7,12 @@
     "deploy": "npx hardhat run scripts/deploy.ts --network c1_testnet",
     "call": "npx hardhat run scripts/callContract.ts --network c1_testnet",
     "configure_subgraph": "graph codegen --output-dir subgraph/types/",
-    "create_subgraph": "graph create milkomeda/subgraph_tutorial_c1 --node http://127.0.0.1:8020",
-    "deploy_subgraph": "graph deploy milkomeda/subgraph_tutorial_c1 --ipfs http://localhost:5001  --node http://localhost:8020 --output-dir artifacts/subgraph -l 0.1",
+    "create_subgraph": "graph create milkomeda/subgraph_tutorial_c1 --node https://c1-devnet-thegraph.milkomeda.com",
+    "deploy_subgraph": "graph deploy milkomeda/subgraph_tutorial_c1 --ipfs https://ipfs.milkomeda.com  --node https://c1-devnet-thegraph.milkomeda.com --output-dir artifacts/subgraph -l 0.1",
     "all": "yarn deploy && yarn configure_subgraph && yarn create_subgraph && yarn deploy_subgraph"
   },
   "dependencies": {
+    "@graphprotocol/graph-cli": "^0.49.0",
     "@graphprotocol/graph-ts": "^0.29.3",
     "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
